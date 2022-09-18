@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { useContext } from "react";
+import { Routes, Route } from "react-router-dom";
+import { UserContext } from "./context/user.context";
+import Authentication from "./routes/authentication/authentication.component";
+import Checkout from "./routes/checkout/checkout.component";
+import Home from "./routes/home/home.component";
+import Navigation from "./routes/navigation/navigation.component";
+import Shop from "./routes/shop/shop.component";
 
-function App() {
+
+const App = () => {
+
+  const {currentUser} = useContext(UserContext);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/" element={<Navigation />}>
+        <Route index element={ currentUser ? <Home /> : <Authentication/>}/>
+        <Route path="shop/*" element={ currentUser ? <Shop /> : <Authentication/>}/>
+        <Route path="checkout" element={ currentUser ? <Checkout/> : <Authentication/>} />
+      </Route>
+    </Routes>
   );
-}
+};
 
 export default App;
