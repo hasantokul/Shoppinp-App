@@ -24,12 +24,12 @@ import {
 // Configuration
 
 const firebaseConfig = {
-  apiKey: "API_KEY",
-  authDomain: "DOMAIN",
-  projectId: "PROJECT_ID",
-  storageBucket: "STORAGE_BUCKET",
-  messagingSenderId: "MESSAGING_SENDER_ID",
-  appId: "APP_ID",
+  apiKey: "AIzaSyDyDCNqdQ5fmb72LPY9U5FN6WdHFcI1PCo",
+  authDomain: "crwn-clothing-db-9af2e.firebaseapp.com",
+  projectId: "crwn-clothing-db-9af2e",
+  storageBucket: "crwn-clothing-db-9af2e.appspot.com",
+  messagingSenderId: "481078692652",
+  appId: "1:481078692652:web:2c010eeb26defaa726fa89",
 };
 
 // Initialize Firebase
